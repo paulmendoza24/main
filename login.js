@@ -3,9 +3,8 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    // Base64-encoded credentials
-    const encodedUsername = "YWRtaW4="; // "admin"
-    const encodedPassword = "ZmFsY29ud2l6YXJk"; // "falconwizard"
+    const encodedUsername = "YWRtaW4="; 
+    const encodedPassword = "ZmFsY29ud2l6YXJk"; 
 
     if (
       btoa(username) === encodedUsername &&
