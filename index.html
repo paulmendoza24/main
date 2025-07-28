@@ -1,123 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to Paul Mendoza's personal website." />
-    <meta name="author" content="Paul Mendoza" />
-    <meta name="theme-color" content="#ffffff"> <!-- Custom color for Android browsers -->
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
-    <title>PAUL MENDOZA</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  </head>
-  <body>
-    <div id="header">
-      <div class="container">
-        <nav>
-          <a href="#"><img src="images/logo.png" class="logo" /></a>
-          <ul>
-            <li><i class='bx bxl-github bx-tada' style='color:#ffffff; font-size: 30px;'></i><a href="https://github.com/paulmendoza24" target="_blank" rel="noopener noreferrer">Github</a></li>
-            <li><i class='bx bxl-facebook-circle bx-tada' style='color:#006aff; font-size: 30px;'></i><a href="https://www.facebook.com/mypaulmendoza" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><i class='bx bxl-instagram bx-tada' style='color:#ffdc80; font-size: 30px;'></i><a href="https://www.instagram.com/mypaulmendoza" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><i class='bx bxl-tiktok bx-tada' style='color:#ffffff; font-size: 30px;'></i><a href="https://www.tiktok.com/@mypaulmendoza" target="_blank" rel="noopener noreferrer">TikTok</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header-text">
-        <p>Programmer</p>
-        <h1>Hi, I'm <span>Paul Mendoza</span><br>From Philippines</h1><br><h6>Welcome to my Website!</h6>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Welcome to Paul Mendoza's personal website." />
+  <meta name="author" content="Paul Mendoza" />
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+  <title>PAUL MENDOZA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <a href="#"><img src="images/logo.png" class="logo" /></a>
+        <ul>
+          <li><i class='bx bxl-github bx-tada' style='color:#ffffff; font-size: 30px;'></i><a href="https://github.com/paulmendoza24" target="_blank">Github</a></li>
+          <li><i class='bx bxl-facebook-circle bx-tada' style='color:#006aff; font-size: 30px;'></i><a href="https://www.facebook.com/mypaulmendoza" target="_blank">Facebook</a></li>
+          <li><i class='bx bxl-instagram bx-tada' style='color:#ffdc80; font-size: 30px;'></i><a href="https://www.instagram.com/mypaulmendoza" target="_blank">Instagram</a></li>
+          <li><i class='bx bxl-tiktok bx-tada' style='color:#ffffff; font-size: 30px;'></i><a href="https://www.tiktok.com/@mypaulmendoza" target="_blank">TikTok</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- --------------about------------ -->
-    <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img src="images/profile.jpg" />
+    <div class="header-text">
+      <p>Programmer</p>
+      <h1>Hi, I'm <span>Paul Mendoza</span><br>From Philippines</h1>
+      <h6>Welcome to my Website!</h6>
+      <a href="login.html" class="btn">Codes</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="images/profile.jpg" alt="Profile" />
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p><strong>Paul Mendoza</strong> here — a passionate programmer from the Philippines, focused on building functional and beautiful web and mobile apps.</p>
+          <p>I specialize in front-end and back-end development, and I love learning new technologies to improve my craft.</p>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('programming-lang')">Programming Language</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
           </div>
-          <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
-            <p>
-              Hi! I'm <strong>Paul Mendoza</strong>, a passionate programmer from the Philippines. I specialize in web and app development, creating beautiful and functional user interfaces, and solving complex problems with clean code.
-            </p>
-            <p>
-              I am always learning and improving my skills, striving to become better at what I do. Whether it’s front-end or back-end development, I take pride in my work and aim to make the web a more user-friendly place.
-            </p>
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-              <p class="tab-links" onclick="opentab('programming-lang')">Programming Language</p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
-            </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Programmer</span><br />Designing Web/App Interfaces
-                </li>
-                <li>
-                  <span>App Development</span><br />Building Android/Desktop App
-                </li>
-                <li><span>Web Development</span><br />Web App Development</li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="programming-lang">
-              <ul>
-                <li>
-                  <img src="images/python.ico" style="width: 30px; height: 30px; margin-right:20px">Python
-                </li>
-                <li>
-                  <img src="images/html.ico" style="width: 30px; height: 30px; margin-right:20px">HTML
-                </li>
-                <li>
-                  <img src="images/css.ico" style="width: 30px; height: 30px; margin-right:20px">CSS
-                </li>
-                <li>
-                  <img src="images/javascript.ico" style="width: 30px; height: 30px; margin-right:20px">JAVASCIPT
-                </li>
-                <li>
-                  <img src="images/c++.ico" style="width: 30px; height: 30px; margin-right:20px">C++
-                </li>
-                <li>
-                  <img src="images/mysql.ico" style="width: 30px; height: 30px; margin-right:20px">MySQL
-                </li>
-                <li>
-                  <img src="images/java.ico" style="width: 30px; height: 30px; margin-right:20px">Java
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <ul>
-                <li>
-                  <span>2023 - Current</span><br /><strong>Metro Business College</strong> - Bachelor of Science in Computer Science
-                </li>
-                <li>
-                  <span>2023</span><br /><strong>PUP Parañaque Campus</strong> - Bachelor of Science in Information Technology 
-                </li>
-                <li>
-                  <span>2022</span><br /><strong>STI College Las Piñas</strong> - Bachelor of Science in Information Technology
-                </li>
-              </ul>
-            </div>
+
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>Programmer</span><br />Designing Web/App Interfaces</li>
+              <li><span>App Development</span><br />Building Android/Desktop App</li>
+              <li><span>Web Development</span><br />Web App Development</li>
+            </ul>
+          </div>
+
+          <div class="tab-contents" id="programming-lang">
+            <ul>
+              <li><img src="images/python.ico">Python</li>
+              <li><img src="images/html.ico">HTML</li>
+              <li><img src="images/css.ico">CSS</li>
+              <li><img src="images/javascript.ico">JavaScript</li>
+              <li><img src="images/c++.ico">C++</li>
+              <li><img src="images/mysql.ico">MySQL</li>
+              <li><img src="images/java.ico">Java</li>
+            </ul>
+          </div>
+
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2023 - Current</span><br /><strong>Metro Business College</strong> - BS Computer Science</li>
+              <li><span>2023</span><br /><strong>PUP Parañaque Campus</strong> - BSIT</li>
+              <li><span>2022</span><br /><strong>STI College Las Piñas</strong> - BSIT</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- -------portfolio---------- -->
-    <!-- <div id="portfolio">
-      <div class="container">
-        <h1 class="sub-title">My Work</h1>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <p>&copy; 2025 Paul Mendoza. All rights reserved.</p>
       </div>
-     </div> -->
-     <footer>
-      <div class="footer-container">
-        <div class="footer-content">
-          <p>&copy; 2025 Paul Mendoza. All rights reserved.</p>
-        </div>
-        <div class="footer-email">
-          <img src="images/gmail.ico" style="width: 30px; height: 30px; margin-right:20px"><p>npmendoza240@gmail.com</p>
-        </div>
+      <div class="footer-email">
+        <img src="images/gmail.ico" /><p>npmendoza240@gmail.com</p>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
+</body>
 </html>
