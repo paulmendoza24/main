@@ -64,16 +64,29 @@
     if (sessionStorage.getItem("loggedIn") !== "true") {
       window.location.href = "login.html";
     }
+
+    function decodeBase64Links() {
+      const links = document.querySelectorAll('.download-link');
+      links.forEach(link => {
+        const encoded = link.getAttribute('data-href');
+        if (encoded) {
+          link.href = atob(encoded);
+        }
+      });
+    }
+
+    window.onload = decodeBase64Links;
   </script>
 </head>
 <body>
   <div class="container">
     <h1><i class='bx bx-cloud-download'></i> Private Code Downloads</h1>
 
-    <a class="download-link" href="https://codeload.github.com/paulmendoza24/backupcode/zip/refs/heads/main">Backupcodes</a>
-    <a class="download-link" href="https://codeload.github.com/paulmendoza24/windows10-activator/zip/refs/heads/main" target="_blank">Windows10 Activator</a>
-    <a class="download-link" href="https://codeload.github.com/paulmendoza24/microsoft-office2021/zip/refs/heads/main" target="_blank">Microsoft Office 2021</a>
-    
+    <a class="download-link" data-href="aHR0cHM6Ly9jb2RlbG9hZC5naXRodWIuY29tL2hhcnVrbzAyNC9iYWNrdXAvemlwL3JlZnMvYmVhZHMvbWFpbg==">Backup Data</a>
+
+    <a class="download-link" data-href="aHR0cHM6Ly9jb2RlbG9hZC5naXRodWIuY29tL3BhdWxtZW5kb3phMjQvd2luZG93czEwLWFjdGl2YXRvci96aXAvcmVmcy9oZWFkcy9tYWlu" target="_blank">Windows10 Activator</a>
+
+    <a class="download-link" data-href="aHR0cHM6Ly9jb2RlbG9hZC5naXRodWIuY29tL3BhdWxtZW5kb3phMjQvbWljcm9zb2Z0LW9mZmljZTIwMjEvemlwL3JlZnMvaGVhZHMvbWFpbg==" target="_blank">Microsoft Office 2021</a>
 
     <button class="logout-btn" onclick="logout()"><i class='bx bx-log-out'></i> Logout</button>
   </div>
