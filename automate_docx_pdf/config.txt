@@ -1,0 +1,19 @@
+NAYOtemp.docx 
+
+<cut>
+
+"name": name, 
+"date": "February 24, 2000"
+
+<cut>
+
+Dennis MacAlistair Ritchie
+Brian Wilson Kernighan
+James Arthur Gosling
+Guido van Rossum
+Bjarne Stroustrup
+Timothy John Berners-Lee
+Linus Benedict Torvalds
+Ken Thompson
+Grace Brewster Murray Hopper
+Donald Ervin Knuth
