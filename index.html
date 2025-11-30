@@ -1,114 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Welcome to Paul Mendoza's personal website." />
-  <meta name="author" content="Paul Mendoza" />
-  <meta name="theme-color" content="#ffffff">
-  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
-  <title>PAUL MENDOZA</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Paul Mendoza - Developer Portfolio">
+  <title>Paul Mendoza - Developer Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div id="header">
-    <div class="container">
-      <nav>
-        <a href="#"><img src="images/logo.png" class="logo" /></a>
-        <ul>
-          <li><i class='bx bxl-github bx-tada' style='color:#ffffff; font-size: 30px;'></i><a href="https://github.com/paulmendoza24" target="_blank">Github</a></li>
-          <li><i class='bx bxl-facebook-circle bx-tada' style='color:#006aff; font-size: 30px;'></i><a href="https://www.facebook.com/mypaulmendoza" target="_blank">Facebook</a></li>
-          <li><i class='bx bxl-instagram bx-tada' style='color:#ffdc80; font-size: 30px;'></i><a href="https://www.instagram.com/mypaulmendoza" target="_blank">Instagram</a></li>
-          <li><i class='bx bxl-tiktok bx-tada' style='color:#ffffff; font-size: 30px;'></i><a href="https://www.tiktok.com/@mypaulmendoza" target="_blank">TikTok</a></li>
+
+  <!-- Header -->
+  <header id="siteHeader" class="site-header">
+    <div class="nav-inner container glass">
+      <a href="#hero" class="brand">BabyP. Dev</a>
+      <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hb-line"></span>
+        <span class="hb-line"></span>
+        <span class="hb-line"></span>
+      </button>
+      <nav id="nav" class="nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#hero">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="login.html">Downloads</a></li>
         </ul>
+        <div class="socials">
+          <a href="https://github.com/paulmendoza24" target="_blank"><i class='bx bxl-github bx-tada'></i></a>
+          <a href="https://www.facebook.com/mypaulmendoza" target="_blank"><i
+              class='bx bxl-facebook-circle bx-tada'></i></a>
+          <a href="https://www.instagram.com/mypaulmendoza" target="_blank"><i class='bx bxl-instagram bx-tada'></i></a>
+          <a href="https://www.tiktok.com/@mypaulmendoza" target="_blank"><i class='bx bxl-tiktok bx-tada'></i></a>
+        </div>
       </nav>
     </div>
-    <div class="header-text">
-      <p>Programmer</p>
-      <h1>Hi, I'm <span>Paul Mendoza</span><br>From Philippines</h1>
-      <h6>Welcome to my Website!</h6>
-      <br>
-      <a href="login.html" class="btn"> Download File </a>
-    </div>
-  </div>
+  </header>
 
-  <!-- About Section -->
-  <div id="about">
-    <div class="container">
-      <div class="row">
-        <div class="about-col-1">
-          <img src="images/profile.jpg" alt="Profile" />
+  <!-- HERO -->
+  <section id="hero" class="hero section">
+    <div class="container hero-inner">
+      <div class="hero-left reveal">
+        <p class="eyebrow">PROGRAMMER</p>
+        <h1 class="hero-title">Hi, I'm & <span>Paul Mendoza</span></h1>
+        <p class="hero-lead">Building digital experiences that merge creativity with technology. Specializing in modern
+          web development, clean code, and responsive UI.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn">View Projects</a>
         </div>
-        <div class="about-col-2">
-          <h1 class="sub-title">About Me</h1>
-          <!-- <p><strong>Paul Mendoza</strong> here a passionate programmer from the Philippines, focused on building functional and beautiful web and apps.</p>
-          <p>I specialize in front-end and back-end development, and I love learning new technologies to improve my craft.</p> -->
-          <p><strong>Hi, I'm Niño Paul Mendoza</strong>  a passionate and driven programmer from the Philippines. I specialize in creating both functional and visually engaging websites and applications. Whether it’s front-end design or back-end development, I enjoy bringing ideas to life through clean, efficient code.</p>
+      </div>
+      <div class="hero-right reveal">
+        <div class="hero-portrait-wrap">
+          <div class="portrait-ring">
+            <img src="images/profile.jpg" alt="Paul Mendoza" class="portrait-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <p>My journey in tech began with curiosity and has grown into a deep commitment to continuous learning. I thrive on solving complex problems, exploring new technologies, and building projects that make a difference.</p>
-
-          <p>From writing Python scripts and building Java-based applications to designing responsive front-end interfaces using HTML, CSS, and JavaScript I aim to be a well-rounded developer. I also enjoy working with databases like MySQL and learning best practices in software engineering.</p>
-
-          <p>When I'm not coding, I'm usually exploring new tools, contributing to open-source, or helping others in the dev community grow their skills.</p>
-
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-main reveal">
+          <h2 class="section-title">About Me</h2>
+          <p><strong>Hi, I'm Niño Paul Mendoza</strong> - a passionate developer from the Philippines. I build
+            user-friendly web apps, automation scripts, and desktop tools. I enjoy learning and improving code quality,
+            UX, and performance.</p>
 
           <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-            <p class="tab-links" onclick="opentab('programming-lang')">Programming Skills</p>
-            <p class="tab-links" onclick="opentab('education')">Education</p>
+            <button class="tab-links active-link" data-target="skills">Skills</button>
+            <button class="tab-links" data-target="languages">Programming</button>
+            <button class="tab-links" data-target="education">Education</button>
           </div>
 
           <div class="tab-contents active-tab" id="skills">
             <ul>
-              <li><span>Programmer</span><br />Designing Web/App Interfaces</li>
-              <li><span>App Development</span><br />Building Android/Desktop App</li>
-              <li><span>Web Development</span><br />Web App Development</li>
+              <li>Frontend: HTML, CSS, JavaScript, Responsive UI</li>
+              <li>Backend: Python, Java, REST APIs</li>
+              <li>Tools: Git, MySQL, VS Code</li>
             </ul>
           </div>
 
-          <div class="tab-contents" id="programming-lang">
+          <div class="tab-contents" id="languages">
             <ul>
-              <li><img src="images/python.ico">Python</li>
-              <li><img src="images/html.ico">HTML : Markup language (not a programming language)</li>
-              <li><img src="images/css.ico">CSS : Style sheet language (not a programming language)</li>
-              <li><img src="images/javascript.ico">JavaScript</li>
-              <li><img src="images/c++.ico">C++</li>
-              <li><img src="images/mysql.ico">MySQL : Query Language (not a programming language but still important)</li>
-              <li><img src="images/java.ico">Java</li>
-              <li><img src="images/VB.ico">Visual Basic.NET</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>C++</li>
+              <li>VB.NET</li>
+              <li>PHP</li>
             </ul>
           </div>
 
           <div class="tab-contents" id="education">
             <ul>
-              <li><span>2023 - Current</span><br /><strong>Metro Business College</strong> - BS Computer Science</li>
-              <li><span>2023</span><br /><strong>PUP Parañaque Campus</strong> - BSIT</li>
-              <li><span>2022</span><br /><strong>STI College Las Piñas</strong> - BSIT</li>
+              <li>2023-2026 - <b>Current</b> - Metro Business College (Bachelor of Science in Computer Science)</li>
+              <li>2023 - Polytechnic University of the Philippines Parañaque Campus (Bachelor of Science in Information
+                Technology)</li>
+              <li>2022 - STI Las Piñas (Bachelor of Science in Information Technology)</li>
             </ul>
           </div>
+        </div>
+
+        <aside class="about-cards reveal">
+          <div class="card glass hover-neon">
+            <h4>Focus</h4>
+            <p>Readable code, accessible UI, and continuous learning.</p>
+          </div>
+          <div class="card glass hover-neon">
+            <h4>Availability</h4>
+            <p>Open to freelance & collaborative projects.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2 class="section-title reveal">Projects</h2>
+      <p class="muted reveal">Click a card for details (modal).</p>
+
+      <div class="projects-grid">
+        <article class="project-card glass reveal" data-title="Simple Percentage-Calculator"
+          data-desc="The Percentage Calculator is a Python desktop application that performs common percentage-based computations through a graphical user interface built with Tkinter. It allows users to calculate a percentage of a number, determine what percentage one value represents of another, and compute percentage increase or decrease. The application includes input validation, error handling, custom UI elements, and real-time feedback to ensure accurate and user-friendly calculations."
+          data-img="https://raw.githubusercontent.com/paulmendoza24/Percentage-Calculator/main/images/ss.png"
+          data-links='{"live":"#","repo":"https://github.com/paulmendoza24"}' tabindex="0">
+          <img src="https://raw.githubusercontent.com/paulmendoza24/Percentage-Calculator/main/images/ss.png"
+            alt="Inventory Manager" class="project-thumb">
+          <div class="project-content">
+            <h3>Simple Percentage-Calculator</h3>
+            <p>Python</p>
+          </div>
+        </article>
+        <article class="project-card glass reveal" data-title="Todo Web App"
+          data-desc="A beautiful, responsive Todo App built entirely with Vanilla JavaScript - no frameworks, no build tools. Tasks persist using localStorage, support drag & drop reordering, and can be imported/exported as JSON."
+          data-img="https://raw.githubusercontent.com/paulmendoza24/Todo-Web-App/main/todo-ss.png"
+          data-links='{"live":"#","repo":"https://github.com/paulmendoza24"}' tabindex="0">
+          <img src="https://raw.githubusercontent.com/paulmendoza24/Todo-Web-App/main/todo-ss.png" alt="Todo Web App"
+            class="project-thumb">
+          <div class="project-content">
+            <h3>Todo Web App</h3>
+            <p>HTML • JS • LocalStorage</p>
+          </div>
+        </article>
+        <article class="project-card glass reveal" data-title="Python Automation (Planning)"
+          data-desc="Scripts for automating repetitive tasks, file processing and exports."
+          data-img="https://cdn.activestate.com/wp-content/uploads/2020/06/AutomatableTasks.jpg"
+          data-links='{"live":"#","repo":"#"}' tabindex="0">
+          <img src="https://cdn.activestate.com/wp-content/uploads/2020/06/AutomatableTasks.jpg" alt="Python Automation"
+            class="project-thumb">
+          <div class="project-content">
+            <h3>Python Automation (Planning)</h3>
+            <p>Python • Scripting</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-inner glass" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-media"><img id="modalImg" src="" alt=""></div>
+        <div class="modal-body">
+          <h3 id="modalTitle"></h3>
+          <p id="modalDesc"></p>
+          <div id="modalLinks" class="modal-links"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-content">
-        <p>&copy; 2025 Paul Mendoza. All rights reserved.</p>
-      </div>
+  <!-- Back to top -->
+  <button id="backTop" class="back-top" aria-label="Back to top"><i class='bx bxs-up-arrow'></i></button>
+
+  <!-- FOOTER -->
+  <footer class="section footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Paul Mendoza</p>
       <div class="footer-email">
-        <img src="images/gmail.ico" /><p>npmendoza240@gmail.com</p>
+        <img src="images/gmail.ico" alt="email icon">
+        <a href="mailto:npmendoza240@gmail.com">npmendoza240@gmail.com</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/paulmendoza24" target="_blank"><i class='bx bxl-github bx-tada'></i></a>
+        <a href="https://www.facebook.com/mypaulmendoza" target="_blank"><i
+            class='bx bxl-facebook-circle bx-tada'></i></a>
+        <a href="https://www.instagram.com/mypaulmendoza" target="_blank"><i class='bx bxl-instagram bx-tada'></i></a>
+        <a href="https://www.tiktok.com/@mypaulmendoza" target="_blank"><i class='bx bxl-tiktok bx-tada'></i></a>
       </div>
     </div>
   </footer>
 
+
   <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
-
-
