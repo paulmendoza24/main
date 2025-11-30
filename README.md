@@ -1,4 +1,4 @@
-# Personal Website - Paul Mendoza
+# Personal Portfolio - Paul Mendoza
 
 Welcome to the repository for my personal website! This website is a simple, clean, and responsive site that showcases my skills, education, and projects as a developer. The website includes sections such as an "About Me" section, social media links, and an easy-to-navigate layout.
 
