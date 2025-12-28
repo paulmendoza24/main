@@ -7,17 +7,12 @@
   <meta name="description" content="Paul Mendoza - Developer Portfolio">
   <title>Paul Mendoza - Developer Portfolio</title>
 
-  <!-- Fonts & Icons -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Header -->
   <header id="siteHeader" class="site-header">
     <div class="nav-inner container glass">
       <a href="#hero" class="brand">BabyP. Dev</a>
@@ -31,7 +26,7 @@
           <li><a class="nav-link" href="#hero">Home</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#projects">Projects</a></li>
-          <li><a class="nav-link" href="login.html">Downloads</a></li>
+          <!-- <li><a class="nav-link" href="login.html">Downloads</a></li> -->
         </ul>
         <div class="socials">
           <a href="https://github.com/paulmendoza24" target="_blank"><i class='bx bxl-github bx-tada'></i></a>
@@ -44,7 +39,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="hero" class="hero section">
     <div class="container hero-inner">
       <div class="hero-left reveal">
@@ -54,6 +48,7 @@
           web development, clean code, and responsive UI.</p>
         <div class="hero-ctas">
           <a href="#projects" class="btn">View Projects</a>
+          <a href="login.html" class="btn1">Downloads</a>
         </div>
       </div>
       <div class="hero-right reveal">
@@ -66,7 +61,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="section about">
     <div class="container">
       <div class="about-grid">
@@ -125,7 +119,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="section projects">
     <div class="container">
       <h2 class="section-title reveal">Projects</h2>
@@ -143,6 +136,7 @@
             <p>Python</p>
           </div>
         </article>
+
         <article class="project-card glass reveal" data-title="Todo Web App"
           data-desc="A beautiful, responsive Todo App built entirely with Vanilla JavaScript - no frameworks, no build tools. Tasks persist using localStorage, support drag & drop reordering, and can be imported/exported as JSON."
           data-img="https://raw.githubusercontent.com/paulmendoza24/Todo-Web-App/main/todo-ss.png"
@@ -154,6 +148,7 @@
             <p>HTML • JS • LocalStorage</p>
           </div>
         </article>
+
         <article class="project-card glass reveal" data-title="Python Automation (Planning)"
           data-desc="Scripts for automating repetitive tasks, file processing and exports."
           data-img="https://cdn.activestate.com/wp-content/uploads/2020/06/AutomatableTasks.jpg"
@@ -169,7 +164,6 @@
     </div>
   </section>
 
-  <!-- MODAL -->
   <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
     <div class="modal-inner glass" role="document">
       <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
@@ -184,10 +178,8 @@
     </div>
   </div>
 
-  <!-- Back to top -->
   <button id="backTop" class="back-top" aria-label="Back to top"><i class='bx bxs-up-arrow'></i></button>
 
-  <!-- FOOTER -->
   <footer class="section footer">
     <div class="container footer-inner">
       <p>&copy; 2025 Paul Mendoza</p>
@@ -205,9 +197,7 @@
     </div>
   </footer>
 
-
   <script src="script.js"></script>
 </body>
-
 
 </html>
