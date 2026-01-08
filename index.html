@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Paul Mendoza - Developer Portfolio">
   <title>Paul Mendoza - Developer Portfolio</title>
-
+  <link rel="icon" href="images/icon.png">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   <link rel="stylesheet" href="styles.css">
@@ -16,7 +16,8 @@
 
   <header id="siteHeader" class="site-header">
     <div class="nav-inner container glass">
-      <a href="#hero" class="brand">BabyP. Dev</a>
+
+      <a href="#hero" class="brand"><img src="images/icon.png" alt="icon.png" class="logoicon">Falcon Devs</a>
       <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hb-line"></span>
         <span class="hb-line"></span>
@@ -54,7 +55,10 @@
       <div class="hero-right reveal">
         <div class="hero-portrait-wrap">
           <div class="portrait-ring">
-            <img src="images/profile.jpg" alt="Paul Mendoza" class="portrait-img">
+            <div class="flip-container">
+              <img src="images/profile.jpg" alt="Paul Mendoza" class="portrait-img front">
+              <img src="images/profilelogo.png" alt="Logo" class="portrait-img back">
+            </div>
           </div>
         </div>
       </div>

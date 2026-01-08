@@ -32,6 +32,14 @@
     margin:0 auto;
     padding:32px 0
 }
+.logoicon {
+    display:flexbox;
+    margin-right:15px;
+    width: 40px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
 /* GLASS */
  .glass{
      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
@@ -123,13 +131,59 @@
     border-radius:2px;
     transition:all .18s
 }
+
+.flip-container {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotatePause 6s infinite ease-in-out;
+}
+
+/* Images */
+.flip-container .portrait-img {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(6,166,255,0.12);
+  box-shadow: 0 20px 60px rgba(2,8,20,0.7);
+}
+
+/* Back image */
+.flip-container .back {
+  transform: rotateY(180deg);
+}
+
+/* Rotate → Pause → Rotate */
+@keyframes rotatePause {
+  /* Profile visible */
+  0%   { transform: rotateY(0deg); }
+  20%  { transform: rotateY(0deg); }
+
+  /* Rotate to icon */
+  40%  { transform: rotateY(180deg); }
+
+  /* Pause on icon (2s) */
+  60%  { transform: rotateY(180deg); }
+
+  /* Rotate back to profile */
+  80%  { transform: rotateY(360deg); }
+
+  /* Pause on profile */
+  100% { transform: rotateY(360deg); }
+}
+
+
 /* HERO */
  .section{
     padding:80px 0
 }
  .hero{
     padding-top:120px;
-    padding-bottom:40px
+    padding-bottom:40px;
+
 }
  .hero-inner{
     display:flex;
