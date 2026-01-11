@@ -75,6 +75,9 @@
     text-decoration:none;
     /* font-size:30px */
     font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    
 }
  .nav{
     display:flex;
@@ -120,16 +123,25 @@
     background:transparent;
     border:0;
     cursor:pointer;
-    padding:6px
+    padding:6px;
+    color: var(--muted);
+    
 }
- .hb-line{
-    display:block;
-    width:22px;
-    height:2px;
-    background:var(--muted);
-    margin:4px 0;
-    border-radius:2px;
-    transition:all .18s
+#menu , #close{
+    font-size: 40px;
+    transition: opacity 0.2s ease;
+}
+
+#close {
+    display: none;
+}
+.hamburger[aria-expanded="true"] #menu {
+  display: none;
+}
+
+.hamburger[aria-expanded="true"] #close {
+  display: block;
+
 }
 
 .flip-container {
@@ -614,7 +626,8 @@
     }
      .portrait-img{
         width:200px;
-        height:200px
+        height:200px;
+
     }
      .hero-title{
         font-size:28px
