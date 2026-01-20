@@ -1,210 +1,504 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Paul Mendoza - Developer Portfolio">
-  <title>Paul Mendoza - Developer Portfolio</title>
-  <link rel="icon" href="images/icon.png">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Mendoza - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <header id="siteHeader" class="site-header">
-    <div class="nav-inner container glass">
-
-      <a href="#hero" class="brand"><img src="images/icon.png" alt="icon.png" class="logoicon">Falcon Devs</a>
-      <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <ion-icon name="menu" id="menu"></ion-icon>
-        <ion-icon name="close" id="close"></ion-icon>
-      </button>
-      <nav id="nav" class="nav">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="#hero">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#projects">Projects</a></li>
-        </ul>
-        <div class="socials">
-          <a href="https://github.com/paulmendoza24" target="_blank"><i class='bx bxl-github bx-tada'></i></a>
-          <a href="https://www.facebook.com/mypaulmendoza" target="_blank"><i
-              class='bx bxl-facebook-circle bx-tada'></i></a>
-          <a href="https://www.instagram.com/mypaulmendoza" target="_blank"><i class='bx bxl-instagram bx-tada'></i></a>
-          <a href="https://www.tiktok.com/@mypaulmendoza" target="_blank"><i class='bx bxl-tiktok bx-tada'></i></a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <section id="hero" class="hero section">
-    <div class="container hero-inner">
-      <div class="hero-left reveal">
-        <p class="eyebrow">PROGRAMMER</p>
-        <h1 class="hero-title">Hi, I'm & <span>Paul Mendoza</span></h1>
-        <p class="hero-lead">Building digital experiences that merge creativity with technology. Specializing in modern
-          web development, clean code, and responsive UI.</p>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn">View Projects</a>
-          <a href="login.html" class="btn1">Downloads</a>
-        </div>
-      </div>
-      <div class="hero-right reveal">
-        <div class="hero-portrait-wrap">
-          <div class="portrait-ring">
-            <div class="flip-container">
-              <img src="images/profile.jpg" alt="Paul Mendoza" class="portrait-img front">
-              <img src="images/profilelogo.png" alt="Logo" class="portrait-img back">
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo" onclick="scrollToSection('home')">
+                <div class="logo-icon"><img src="images/icon.png" alt="logo"></div>
+                <span class="logo-text">Falcon Devs</span>
             </div>
-          </div>
+            <nav>
+                <a href="#home" onclick="scrollToSection('home')">Home</a>
+                <a href="#about" onclick="scrollToSection('about')">About</a>
+                <a href="#projects" onclick="scrollToSection('projects')">Projects</a>
+                <a href="#skills" onclick="scrollToSection('skills')">Skills</a>
+                <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://github.com/paulmendoza24" target="_blank">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/mypaulmendoza" target="_blank">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/mypaulmendoza" target="_blank">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="about" class="section about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-main reveal">
-          <h2 class="section-title">About Me</h2>
-          <p><strong>Hi, I'm Niño Paul Mendoza</strong> - a passionate developer from the Philippines. I build
-            user-friendly web apps, automation scripts, and desktop tools. I enjoy learning and improving code quality,
-            UX, and performance.</p>
-
-          <div class="tab-titles">
-            <button class="tab-links active-link" data-target="skills">Skills</button>
-            <button class="tab-links" data-target="languages">Programming</button>
-            <button class="tab-links" data-target="education">Education</button>
-          </div>
-
-          <div class="tab-contents active-tab" id="skills">
-            <ul>
-              <li><b>Frontend:</b> HTML, CSS, JavaScript, Responsive UI</li>
-              <li><b>Backend:</b> Python, Java, REST APIs</li>
-              <li><b>Tools:</b> Git, MySQL, VS Code</li>
-              <li><b>OS & Security:</b> Windows, Linux, basic network testing, <b>fundamentals of penetration
-                  testing</b></li>
-            </ul>
-          </div>
-
-          <div class="tab-contents" id="languages">
-            <ul>
-              <li><i class="fa-brands fa-python"></i> Python</li>
-              <li><i class="fa-brands fa-square-js"></i> JavaScript</li>
-              <li><i class="fa-brands fa-java"></i> Java</li>
-              <li><i class='bx bxl-c-plus-plus'></i> C++</li>
-              <li><i class="fas fa-laptop-code"></i> VB.NET</li>
-              <li><i class="fa-brands fa-php"></i> PHP</li>
-            </ul>
-          </div>
-
-          <div class="tab-contents" id="education">
-            <ul>
-              <li>2023-2026 - <b>Current</b> - Metro Business College (Bachelor of Science in Computer Science)</li>
-              <li>2023 - Polytechnic University of the Philippines Parañaque Campus (Bachelor of Science in Information
-                Technology)</li>
-              <li>2022 - STI Las Piñas (Bachelor of Science in Information Technology)</li>
-            </ul>
-          </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg hero-bg-1"></div>
+        <div class="hero-bg hero-bg-2"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-label">Programmer</span>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Paul Mendoza</span>
+                    </h1>
+                    <p class="hero-description">
+                        Building digital experiences that merge creativity with technology.
+                        Specializing in modern web development, clean code, and responsive UI.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary" onclick="scrollToSection('projects')">View
+                            Projects</a>
+                        <a href="https://paulmendoza24.github.io/main/login.html" class="btn btn-outline">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Downloads
+                        </a>
+                    </div>
+                    <div class="tech-stack">
+                        <span>Tech Stack:</span>
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">C++</span>
+                        <span class="tech-item">Java</span>
+                        <span class="tech-item">PHP</span>
+                        <span class="tech-item">VB.Net</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-wrapper">
+                        <div class="profile-ring">
+                            <div class="profile-ring-inner"></div>
+                        </div>
+                        <div class="profile-image">
+                            <img src="images/profile.jpg" alt="Paul Mendoza">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <aside class="about-cards reveal">
-          <div class="card glass hover-neon">
-            <h4>Focus</h4>
-            <p>Readable code, accessible UI, and continuous learning.</p>
-          </div>
-          <div class="card glass hover-neon">
-            <h4>Availability</h4>
-            <p>Open to freelance & collaborative projects.</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2 class="section-title reveal">Projects</h2>
-      <p class="muted reveal">Click a card for details.</p>
-
-      <div class="projects-grid">
-        <article class="project-card glass reveal" data-title="Simple Percentage-Calculator"
-          data-desc="The Percentage Calculator is a Python desktop application that performs common percentage-based computations through a graphical user interface built with Tkinter. It allows users to calculate a percentage of a number, determine what percentage one value represents of another, and compute percentage increase or decrease. The application includes input validation, error handling, custom UI elements, and real-time feedback to ensure accurate and user-friendly calculations."
-          data-img="https://raw.githubusercontent.com/paulmendoza24/Percentage-Calculator/main/images/ss.png"
-          data-links='{"live":"#","repo":"https://github.com/paulmendoza24/Percentage-Calculator.git"}' tabindex="0">
-          <img src="https://raw.githubusercontent.com/paulmendoza24/Percentage-Calculator/main/images/ss.png"
-            alt="Inventory Manager" class="project-thumb">
-          <div class="project-content">
-            <h3>Simple Percentage-Calculator</h3>
-            <p>Python</p>
-          </div>
-        </article>
-
-        <article class="project-card glass reveal" data-title="Todo Web App"
-          data-desc="A beautiful, responsive Todo App built entirely with Vanilla JavaScript - no frameworks, no build tools. Tasks persist using localStorage, support drag & drop reordering, and can be imported/exported as JSON."
-          data-img="https://raw.githubusercontent.com/paulmendoza24/Todo-Web-App/main/todo-ss.png"
-          data-links='{"live":"#","repo":"https://github.com/paulmendoza24/Todo-Web-App.git"}' tabindex="0">
-          <img src="https://raw.githubusercontent.com/paulmendoza24/Todo-Web-App/main/todo-ss.png" alt="Todo Web App"
-            class="project-thumb">
-          <div class="project-content">
-            <h3>Todo Web App</h3>
-            <p>HTML • JS • LocalStorage</p>
-          </div>
-        </article>
-
-        <article class="project-card glass reveal" data-title="Python Automation (Planning)"
-          data-desc="Scripts for automating repetitive tasks, file processing and exports."
-          data-img="https://cdn.activestate.com/wp-content/uploads/2020/06/AutomatableTasks.jpg"
-          data-links='{"live":"#","repo":"#"}' tabindex="0">
-          <img src="https://cdn.activestate.com/wp-content/uploads/2020/06/AutomatableTasks.jpg" alt="Python Automation"
-            class="project-thumb">
-          <div class="project-content">
-            <h3>Python Automation (Planning)</h3>
-            <p>Python • Scripting</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-    <div class="modal-inner glass" role="document">
-      <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
-      <div class="modal-grid">
-        <div class="modal-media"><img id="modalImg" src="" alt=""></div>
-        <div class="modal-body">
-          <h3 id="modalTitle"></h3>
-          <p id="modalDesc"></p>
-          <div id="modalLinks" class="modal-links"></div>
+        <div class="scroll-indicator" onclick="scrollToSection('about')">
+            <span>Scroll Down</span>
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <button id="backTop" class="back-top" aria-label="Back to top"><i class='bx bxs-up-arrow'></i></button>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title fade-in">About <span class="highlight">Me</span></h2>
+        <p class="section-description fade-in">
+            Passionate developer with a love for creating innovative solutions
+            and delivering exceptional digital experiences.
+        </p>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Clean Code</h3>
+                <p class="feature-description">Writing maintainable, scalable, and efficient code following best
+                    practices.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Creative Design</h3>
+                <p class="feature-description">Transforming ideas into beautiful, user-friendly interfaces.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class=" ">Performance</h3>
+                <p class="feature-description">Optimizing applications for speed and seamless user experience.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Collaboration</h3>
+                <p class="feature-description">Working effectively with teams to deliver exceptional results.</p>
+            </div>
+        </div>
+        <div class="stats-grid fade-in">
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <p class="stat-label">Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2+</div>
+                <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30+</div>
+                <p class="stat-label">Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <p class="stat-label">Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
 
-  <footer class="section footer">
-    <div class="container footer-inner">
-      <p>&copy; 2025 Paul Mendoza</p>
-      <div class="footer-email">
-        <img src="images/gmail.ico" alt="email icon">
-        <a href="mailto:npmendoza240@gmail.com">npmendoza240@gmail.com</a>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/paulmendoza24" target="_blank"><i class='bx bxl-github bx-tada'></i></a>
-        <a href="https://www.facebook.com/mypaulmendoza" target="_blank"><i
-            class='bx bxl-facebook-circle bx-tada'></i></a>
-        <a href="https://www.instagram.com/mypaulmendoza" target="_blank"><i class='bx bxl-instagram bx-tada'></i></a>
-        <a href="https://www.tiktok.com/@mypaulmendoza" target="_blank"><i class='bx bxl-tiktok bx-tada'></i></a>
-      </div>
-    </div>
-  </footer>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title fade-in">Featured <span class="highlight">Projects</span></h2>
+        <p class="section-description fade-in">
+            Here are some of my recent works showcasing my skills and expertise in web development.
+        </p>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/paulmendoza24/Percentage-Calculator/main/images/ss.png"
+                        alt="Simple Percentage-Calculator">
+                    <div class="project-overlay">
+                        <a href="https://github.com/paulmendoza24/Percentage-Calculator" target="_blank"
+                            class="project-link">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="project-link">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Simple Percentage-Calculator</h3>
+                    <p class="project-description">The Percentage Calculator is a Python desktop application that
+                        performs common percentage-based computations through a graphical user interface built with
+                        Tkinter.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Tkinter</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/paulmendoza24/Todo-Web-App/main/todo-ss.png"
+                        alt="Todo Web App">
+                    <div class="project-overlay">
+                        <a href="https://github.com/paulmendoza24/Todo-Web-App" target="_blank" class="project-link">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="project-link">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Todo Web App</h3>
+                    <p class="project-description">A beautiful, responsive Todo App built entirely with Vanilla
+                        JavaScript - no frameworks, no build tools. Tasks persist using localStorage, support drag &
+                        drop reordering, and can be imported/exported as JSON.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">localStorage</span>
 
-  <script src="script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="https://cdn.activestate.com/wp-content/uploads/2020/06/AutomatableTasks.jpg"
+                        alt="Python Automation">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="project-link">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Python Automation (Planning)</h3>
+                    <p class="project-description">Scripts for automating repetitive tasks, file processing and exports.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Selenium</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-outline fade-in">View All Projects</button>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title fade-in">Skills & <span class="highlight">Expertise</span></h2>
+        <p class="section-description fade-in">
+            A comprehensive overview of my technical skills and proficiency levels across various technologies.
+        </p>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3 class="skill-category-title">Frontend</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">CSS</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Tailwind CSS</span>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3 class="skill-category-title">Backend</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-percentage">82%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="82"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">PHP</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="skill-category fade-in">
+                <h3 class="skill-category-title">Tools & Others</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Git</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">MySQL</span>
+                        <span class="skill-percentage">81%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="81"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">PhpMyAdmin</span>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Figma</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title fade-in">Get In <span class="highlight">Touch</span></h2>
+        <p class="section-description fade-in">
+            Have a project in mind or want to collaborate? Feel free to reach out!
+            I'm always open to discussing new opportunities.
+        </p>
+        <div class="contact-container">
+            <div class="fade-in">
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem;">Contact Information</h3>
+                <div class="contact-info-list">
+                    <a href="mailto:paul@falcondevs.com" class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="contact-info-text">
+                            <p>Email</p>
+                            <p>falcon.devs01@gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="tel:+15551234567" class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <div class="contact-info-text">
+                            <p>Phone</p>
+                            <p>+63 (938) 449-8625</p>
+                        </div>
+                    </a>
+                    <a href="#" class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg class="icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="contact-info-text">
+                            <p>Location</p>
+                            <p>Parañaque City, Philippines</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Paul Mendoza" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="paul@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <span>© 2025 Falcon Devs. Made with</span>
+                <span class="heart">❤</span>
+                <span>by Paul Mendoza</span>
+            </div>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
