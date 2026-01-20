@@ -98,6 +98,7 @@ nav a:hover {
     gap: 1rem;
 }
 
+
 .social-icons a {
     color: #9ca3af;
     transition: all 0.3s ease;
@@ -110,6 +111,7 @@ nav a:hover {
     transform: scale(1.2) rotate(5deg);
 }
 
+
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -119,29 +121,32 @@ nav a:hover {
     cursor: pointer;
 }
 @media (max-width: 768px) {
-nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #111827;
-    width: 100%;
-    flex-direction: column;
-    display: none;
-    text-align: center;
-}
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #111827;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
 
-nav a {
-    padding: 1rem;
-    display: block;
-}
+    nav a {
+        padding: 1rem;
+        display: block;
+    }
 
-nav.active {
-    display: flex;
-}
+    nav.active, .social-icons.active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.mobile-menu-btn {
-    display: block;
-}
+    .mobile-menu-btn {
+        display: block;
+    }
+    
 }
 
 /* Hero Section */

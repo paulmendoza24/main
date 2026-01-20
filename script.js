@@ -68,7 +68,16 @@ document.querySelectorAll('.skill-progress').forEach(bar => {
 
 const menuBtn = document.getElementById('mobile-menu-btn');
 const navMenu = document.getElementById('nav-menu');
+const socialIcons = document.querySelector('.social-icons')
 
 menuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    socialIcons.classList.toggle('active')
+    if (navMenu.classList.contains('active')) {
+        menuBtn.textContent = '✕'; 
+    } else {
+        menuBtn.textContent = '☰'; 
+    }
 });
+
+
