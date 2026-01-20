@@ -65,3 +65,10 @@ function handleSubmit(event) {
 document.querySelectorAll('.skill-progress').forEach(bar => {
     bar.style.width = '0%';
 });
+
+const menuBtn = document.getElementById('mobile-menu-btn');
+const navMenu = document.getElementById('nav-menu');
+
+menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
