@@ -5,32 +5,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Paul Mendoza</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(120deg, #1a1a1a, #3a3a3a);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
         }
 
-        .login-box {
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .login-box,
+        .fams {
+            width: 100%;
+            max-width: 350px;
             background-color: #222;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-            width: 350px;
             text-align: center;
+        }
+
+        .login-box {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .fams {
+            background-color: #1f1f1f;
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.15);
         }
 
         .login-box h2 {
             margin-bottom: 25px;
             font-size: 28px;
+            color: #00bcd4;
+        }
+
+        .fams h1 {
+            font-size: 20px;
+            margin-bottom: 15px;
             color: #00bcd4;
         }
 
@@ -49,7 +78,8 @@
             font-size: 16px;
         }
 
-        .login-box button {
+        .login-box button,
+        .fams button {
             padding: 12px;
             border: none;
             border-radius: 6px;
@@ -57,16 +87,18 @@
             color: #fff;
             font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .login-box button:hover {
+        .login-box button:hover,
+        .fams button:hover {
             background-color: #0097a7;
+            transform: translateY(-2px);
         }
 
         .back-link {
             margin-top: 20px;
-            display: block;
+            display: inline-block;
             color: #ccc;
             text-decoration: none;
             font-size: 14px;
@@ -76,57 +108,51 @@
             color: #fff;
         }
 
-        .fams {
-            background-color: #1f1f1f;
-            padding: 30px;
-            border-radius: 12px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.15);
+        /* Tablet */
+        @media (max-width: 768px) {
+            .login-box h2 {
+                font-size: 24px;
+            }
+
+            .fams h1 {
+                font-size: 18px;
+            }
         }
 
-        .fams h1 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #00bcd4;
-        }
+        /* Mobile */
+        @media (max-width: 480px) {
 
-        .fams button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            background-color: #00bcd4;
-            color: #fff;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+            .login-box,
+            .fams {
+                padding: 25px 20px;
+            }
 
-        .fams button:hover {
-            background-color: #0097a7;
-            transform: translateY(-2px);
-        }
+            .login-box input,
+            .login-box button,
+            .fams button {
+                font-size: 14px;
+                padding: 10px;
+            }
 
-        .container {
-            display: flex;
-
-            align-items: center;
-            gap: 25px;
+            .back-link {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 
-
-
 <body>
+
     <div class="container">
+
         <div class="login-box">
             <h2><i class='bx bx-lock-alt'></i> Login</h2>
             <form id="loginForm">
-                <input type="text" placeholder="Username" id="username" required />
-                <input type="password" placeholder="Password" id="password" required />
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
+
             <a href="index.html" class="back-link">
                 <i class='bx bx-arrow-back'></i> Back to Home
             </a>
@@ -135,15 +161,16 @@
         <div class="fams">
             <h1>Form Automation Management System (FAMS)</h1>
             <a
-                href="https://download1979.mediafire.com/gaajcadkinogS8B7ypu6bwsS1E-c5bWw57fRsRHjUjTtCZjiYQh3MaFSHiz94X6zUHvWyxlPnryP9vYJTrCEKNJBeB-g8AOnOrDMCquzmxay7sSZNui8jNClE_9y4WYu8YTY7MO2uAEFdZpjTxZoNobEtPO0hEsz5uhQINIiYJlSPQ/9f2r70iufdkop8x/fams_installer.exe"><button>
+                href="https://download1979.mediafire.com/gaajcadkinogS8B7ypu6bwsS1E-c5bWw57fRsRHjUjTtCZjiYQh3MaFSHiz94X6zUHvWyxlPnryP9vYJTrCEKNJBeB-g8AOnOrDMCquzmxay7sSZNui8jNClE_9y4WYu8YTY7MO2uAEFdZpjTxZoNobEtPO0hEsz5uhQINIiYJlSPQ/9f2r70iufdkop8x/fams_installer.exe">
+                <button>
                     <i class='bx bx-download'></i> Download
                 </button>
             </a>
         </div>
+
     </div>
 
     <script src="login.js"></script>
 </body>
-
 
 </html>
