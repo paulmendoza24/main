@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Paul Mendoza</title>
+    <link rel="shortcut icon" href="../assets/images/profilelogo.png" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #1a1a1a, #3a3a3a);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box {
+            width: 100%;
+            background-color: #222;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .login-box h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #00bcd4;
+        }
+
+        .login-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-box input {
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .login-box button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #00bcd4;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background-color: #0097a7;
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2><i class='bx bx-lock-alt'></i> Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <a href="../index.html" class="back-link">
+                <i class='bx bx-arrow-back'></i> Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script src="../assets/js/login.js"></script>
+</body>
+
+</html>
