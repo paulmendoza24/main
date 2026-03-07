@@ -118,3 +118,17 @@ function closeLegal() {
     document.getElementById("legalModal").style.display = "none";
 }
 
+function toggleProjects() {
+    const hiddenProjects = document.querySelectorAll(".hidden-project");
+    const btn = document.getElementById("projectBtn");
+
+    hiddenProjects.forEach(project => {
+        if (project.style.display === "none" || project.style.display === "") {
+            project.style.display = "block";
+            btn.innerText = "Hide Projects";
+        } else {
+            project.style.display = "none";
+            btn.innerText = "View All Projects";
+        }
+    });
+}
