@@ -1,4 +1,4 @@
-// Header scroll effect
+// ================= HEADER SCROLL =================
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     if (window.scrollY > 20) {
@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth scroll function
+// ================= SMOOTH SCROLL =================
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -16,11 +16,8 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// ================= FADE-IN ANIMATION =================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -32,7 +29,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Animate skill bars
+// ================= SKILL BARS =================
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -49,40 +46,37 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('.skill-category').forEach(el => skillObserver.observe(el));
+document.querySelectorAll('.skill-progress').forEach(bar => bar.style.width = '0%');
 
-// Form submission
+// ================= CONTACT FORM =================
 function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
+
     console.log('Form submitted:', data);
     alert('Thank you for your message! I will get back to you soon.');
+
     form.reset();
 }
 
-// Initialize skill bars with 0 width
-document.querySelectorAll('.skill-progress').forEach(bar => {
-    bar.style.width = '0%';
-});
-
+// ================= MOBILE MENU =================
 const menuBtn = document.getElementById('mobile-menu-btn');
 const navMenu = document.getElementById('nav-menu');
-const socialIcons = document.querySelector('.social-icons')
+const socialIcons = document.querySelector('.social-icons');
 
 menuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    socialIcons.classList.toggle('active')
-    if (navMenu.classList.contains('active')) {
-        menuBtn.textContent = '✕'; 
-    } else {
-        menuBtn.textContent = '☰'; 
-    }
+    socialIcons.classList.toggle('active');
+
+    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
 });
+
+// ================= IMAGE PREVIEW =================
 function openPreview(src) {
     const modal = document.getElementById("imagePreviewModal");
     const previewImage = document.getElementById("previewImage");
-
     previewImage.src = src;
     modal.style.display = "flex";
 }
@@ -90,6 +84,8 @@ function openPreview(src) {
 function closePreview() {
     document.getElementById("imagePreviewModal").style.display = "none";
 }
+
+// ================= LEGAL MODAL =================
 function openLegal(type) {
     const modal = document.getElementById("legalModal");
     const content = document.getElementById("legalContent");
@@ -118,6 +114,7 @@ function closeLegal() {
     document.getElementById("legalModal").style.display = "none";
 }
 
+// ================= PROJECT TOGGLE =================
 function toggleProjects() {
     const hiddenProjects = document.querySelectorAll(".hidden-project");
     const btn = document.getElementById("projectBtn");
@@ -132,3 +129,115 @@ function toggleProjects() {
         }
     });
 }
+
+// On page load, chat is minimized
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.getElementById("chat-body");
+    body.style.display = "none"; // start minimized
+
+    const toggleBtn = document.getElementById("chat-toggle-btn");
+    toggleBtn.addEventListener("click", toggleChat);
+
+    const input = document.getElementById("chat-input");
+    if (input) {
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+    }
+});
+
+// Toggle chat
+function toggleChat() {
+    const body = document.getElementById("chat-body");
+    const isOpening = body.style.display !== "flex";
+    body.style.display = isOpening ? "flex" : "none";
+
+    if (isOpening && !body.dataset.opened) {
+        addMessage("🤖 Paul: Hi! I'm Paul 👋 Nice to meet you, 😊 How can I help you?", "bot");
+        body.dataset.opened = "true";
+    }
+}
+
+// Add message with typing animation
+function addMessage(text, sender, typingSpeed = 5) {
+    const msgContainer = document.getElementById("chat-messages");
+    const row = document.createElement("div");
+    row.className = `chat-row ${sender}`;
+
+    const bubble = document.createElement("div");
+    bubble.className = `chat-bubble ${sender}`;
+    row.appendChild(bubble);
+    msgContainer.appendChild(row);
+
+    let index = 0;
+
+    function typeCharacter() {
+        if (index < text.length) {
+            bubble.innerHTML += text.charAt(index);
+            index++;
+            msgContainer.scrollTop = msgContainer.scrollHeight;
+            setTimeout(typeCharacter, typingSpeed);
+        }
+    }
+
+    typeCharacter();
+}
+
+// Typing dots animation
+function showTyping() {
+    const msgContainer = document.getElementById("chat-messages");
+    const row = document.createElement("div");
+    row.className = "chat-row bot";
+    row.id = "typing";
+
+    row.innerHTML = `
+        <div class="chat-bubble bot typing">
+            <span></span><span></span><span></span>
+        </div>
+    `;
+
+    msgContainer.appendChild(row);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+}
+
+function removeTyping() {
+    const typing = document.getElementById("typing");
+    if (typing) typing.remove();
+}
+
+// Send message to server
+async function sendMessage() {
+    const input = document.getElementById("chat-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    addMessage(`👨🏻‍💼 You: ${message}`, "user");
+    input.value = "";
+
+    showTyping();
+
+    try {
+        const response = await fetch("http://localhost:3000/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message })
+        });
+
+        const data = await response.json();
+        removeTyping();
+
+        addMessage(`🤖 Paul: ${data.reply}`, "bot");
+    } catch (error) {
+        removeTyping();
+        console.error(error);
+        addMessage("⚠️ Error connecting to AI.", "bot");
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("chat-input");
+    if (input) {
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+    }
+});
