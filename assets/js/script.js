@@ -241,3 +241,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbz1eQGYx5dnjFOihGEAyQYEh-hEzZ3bCQYnOQfrBPK3__wH6bowrJ1WhVPTal5Kg1-dhw/exec", {  // Paste your Apps Script Web App URL
+    method: "POST",
+    body: new URLSearchParams(data)
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert("Message sent successfully!");
+    document.getElementById("contactForm").reset();
+  })
+  .catch(error => {
+    alert("Error sending message: " + error);
+  });
+});
